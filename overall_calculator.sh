@@ -18,13 +18,13 @@ name="$1"
 
 if [ -z "$1" ]
 then
-	echo "Usage: "$0" player_name classification"
+	echo "Usage: $0 player_name classification"
 	exit $E_NOARGS
 fi
 
 if [ $# -lt 2 ]
 then
-	echo "Usage: "$0" player_name classification"
+	echo "Usage: $0 player_name classification"
 	exit $E_BADARGS
 fi
 
@@ -33,10 +33,10 @@ shift
 for i in "$@"
 do
 	
-	if [[ "$i" =~ "[0-9]+" ]]
+	if [[ "$i" =~ [0-9]+ ]]
 	then
 			echo "Classification is not a number"
-			exit E_BADARGS
+			exit $E_BADARGS
 	else 
 		case "$i" in
 			"1" )	(( score=score+25 ));;
