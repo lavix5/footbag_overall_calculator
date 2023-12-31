@@ -1,5 +1,5 @@
 #!/bin/bash
-# Footbag overall caluclator based on fallowing scoring:
+# Footbag overall calculator based on following scoring:
 #1st: 25 points
 #2nd 18 points
 #3rd: 15 points
@@ -33,7 +33,7 @@ shift
 for i in "$@"
 do
 	
-	if [[ "$i" =~ [0-9]+ ]]
+	if [[ ! "$i" =~ ^[0-9]+$ ]]
 	then
 			echo "Classification is not a number"
 			exit $E_BADARGS
